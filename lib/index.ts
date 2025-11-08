@@ -54,7 +54,7 @@ export const cleanupCanvas = (canvas: HTMLCanvasElement): void => {
   }
 }
 
-export const resizeImageWithWasm = async (
+export const resize = async (
   img: HTMLImageElement,
   width?: number,
   height?: number

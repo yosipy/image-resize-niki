@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue"
-import { init, resizeImageWithWasm, loadImageFromDataURL } from "@lib/index"
+import { init, resize, loadImageFromDataURL } from "@lib/index"
 
 const selectedFile = ref<File | null>(null)
 const imagePreview = ref<string | null>(null)
@@ -40,7 +40,7 @@ const handleFileChange = async (event: Event) => {
 
       try {
         const img = await loadImageFromDataURL(imagePreview.value)
-        const resizedDataUrl = await resizeImageWithWasm(
+        const resizedDataUrl = await resize(
           img,
           targetWidth.value,
           targetHeight.value
